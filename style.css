@@ -1,0 +1,115 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.parent{
+    height: 100%;
+    width: 68%;
+    margin-top: 20%;
+    margin-left: 17%;
+    
+}
+.lists{
+    display: flex;
+    position: relative;
+    min-width: 80%;
+    overflow: scroll;
+    scroll-behavior: smooth;
+}
+
+.containers{
+    min-height: 346px;
+    min-width: 518px;
+    background-color: aquamarine;
+    margin: 9px;
+
+}
+
+#h1-tag{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        margin-top: 9%;
+        position: relative;
+        padding: 19%;
+}
+
+
+.button{
+    position: relative;
+    height: 90px;
+    margin-left: 18%;
+    width: 90px;
+    display: flex;
+    
+
+}
+#right{
+    font-size: 90px;
+    border-radius: 359px;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+}
+#left{
+    font-size: 90px;
+    border-radius: 359px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+select{
+    padding: 10px;
+    font-size: 19px;
+}
+
+.select-div{
+    max-height: 100%;
+    width: 100%;
+    position: relative;
+    margin-left: 48%;
+    margin-top: 0;
+}
+
+.Indianlist, .old-delhi-squad,.future-squad{
+    display: none;
+}
+
+
+.items-load{
+    height: 1000px;
+
+}
+
+.itemsloadfrom-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 20%;
+    position: relative;
+    padding: 7%;
+    height: 58%;
+    width: 86%;
+    left: -100%; /* Start off-screen */ 
+    transition: left 3s ease;
+
+}
+
+.itemsloadfrom-left.visible {
+     left: 0; /* Slide into the viewport */ 
+}
+.textbox{
+        width: 50%;
+        font-size: 29px;
+        margin: 20px;
+        background-color: whitesmoke;
+        margin-left: 29px;
+}
+.itemsloadfrom-left img{
+    height: 400px;
+    width: 350px;
+    object-fit: cover;
+}

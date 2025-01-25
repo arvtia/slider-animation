@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider-scroll</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+
+<body>
+
+<div class="parent" style="display: none;">
+    <div class="lists">
+        <div class="containers" id="cont-1">
+            <h1 id="h1-tag">HELLO NATIONS</h1>
+        </div>
+        <div class="containers" id="cont-1">
+            <h1 id="h1-tag">HOLISTIC NATION</h1>
+        </div>
+        <div class="containers" id="cont-1">
+            <h1 id="h1-tag">HOLOGRAM</h1>
+        </div>
+        <div class="containers" id="cont-1">
+            <h1 id="h1-tag">INSTAGRAM</h1>
+        </div>
+        <div class="containers" id="cont-1">
+            <h1 id="h1-tag">PHILOSOPHY</h1>
+        </div>
+        <div class="containers" id="cont-1">
+            <h1 id="h1-tag">BACK TO FIRST</h1>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="button" id="btn" style="display: none;">
+    <input type="button" value="<" id="left" onclick="left()">
+    <input type="button" value=">" id="right" onclick="right()">
+</div>
+
+
+
+<div class="select-div" style="display: none;">
+
+<select name="teams" id="mySelect" onchange="myFunction()">
+    <option value="New-team">India</option>
+    <option value="old-team">Old delhi</option>
+    <option value="future-team">FFIC</option>
+</select>
+
+<div class="Indianlist" id="Indian-squad">
+    <ul>Abhimanyu Easwaran (Batter)</ul>
+    <ul>Rohit Sharma (Batter)</ul>
+    <ul>Viral Kohli (Batter)</ul>
+    <ul>Yashasvi Jaiswal (Batter)</ul>
+    <ul>Shubham Gill (Batter)</ul>
+    <ul>Sarfaraz Khan (Batter) </ul>
+    <ul>Devdutt Padikkal</ul>
+    <ul>Nitish Kumar Reddy (Batter allrounder)</ul>
+    <ul>Ravindra Jadeja (Bowling allrounder)</ul>
+    <ul>Washingtom Sundar</ul>
+    <ul>Tanush Kotian</ul>
+    <ul>KL Rahul(WK-Batter)</ul>
+    <ul>RIshab Pant(WK-Batter)</ul>
+    <ul>Dhruv Jurel(Bowler)</ul>
+    <ul>Jasprit Bumrah (Bowler)</ul>
+    <ul>Akash Deep (Bowler)</ul>
+</div>
+
+<div class="old-delhi-squad" id="old-delhi-squad-">
+    <ul>Travis Head (Batter)</ul>
+    <ul>Marnus Labuschagne (Batter)</ul>
+    <ul>Steven Smith (Batter)</ul>
+    <ul>Usman Khawaja (Batter)</ul>
+    <ul>Nathan McSweeney (Batter)</ul>
+    <ul>Mitchell Marsh (Batter) </ul>
+    <ul>Alex Carey (WK-Batter)</ul>
+    <ul>Josh Inglis(Batter allrounder)</ul>
+    <ul>Pat Cummmins (Bowling allrounder)</ul>
+    <ul>Scott Boland</ul>
+    <ul>Nathan Lyon</ul>
+    <ul>Mitchell Starc (Balwer)</ul>
+    <ul>Josh Hazlewood(Bowler)</ul>
+</div>
+
+<div class="future-squad" id="future-ffic-team">
+    <ul>Jack Edwards (Batter)</ul>
+    <ul>Jack Clayton (Batter)</ul>
+    <ul>Oliver Davies (Batter)</ul>
+    <ul>Jayden Goodwin (Batter)</ul>
+    <ul>Matt Renshaw (Batter)</ul>
+    <ul>Charlie Anderson (Batter) </ul>
+    <ul>Sam Konstas (WK-Batter)</ul>
+    <ul>Mahli Beardman(Batter allrounder)</ul>
+    <ul>Aidan O Connor (Bowling allrounder)</ul>
+    <ul>Sam Harper (Balwer)</ul>
+    <ul>Scott Boland (Balwer)</ul>
+    <ul>Lloyd Pope (Balwer)</ul>
+    <ul>Hanno Jacobs(Bowler)</ul>
+</div>
+
+</div>
+
+
+<div class="items-load">
+
+
+    <div class="itemsloadfrom-left" id="slideInDiv">
+        <img src="https://tinyurl.com/4mxen57x" alt="">
+
+        <div class="textbox">
+
+            <h1>Hello World</h1>
+            <p>Lorem ipsum dolor sit amet.
+            Aperiam, nulla porro. Ipsa, perferendis.
+            Perferendis impedit dignissimos error consequuntur?
+            Eveniet nobis temporibus sint nam?
+            Obcaecati nihil odit impedit ullam?
+            Cupiditate magnam nemo vero molestiae.
+            Accusantium dolores voluptas iste quisquam.
+            Excepturi eius nesciunt consectetur velit.
+            Placeat quaerat sint incidunt sed?
+            Cupiditate inventore dolore adipisci maiores.</p>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+<script>
+
+let mySelect = document.getElementById('mySelect');
+let indiaSquad = document.getElementById('Indian-squad');
+let oldDelhiSquad = document.getElementById('old-delhi-squad-');
+let futureFficTeam = document.getElementById('future-ffic-team');
+
+function myFunction(){
+    indiaSquad.style.display = "none";
+    oldDelhiSquad.style.display = "none";
+    futureFficTeam.style.display = "none";
+
+    const selectedTeam = mySelect.value;
+
+    if (selectedTeam === 'new-team') {
+        indiaSquad.style.display = "block";
+    } else if (selectedTeam === 'old-team') {
+        oldDelhiSquad.style.display = "block";
+    } else if (selectedTeam === 'future-team') {
+        futureFficTeam.style.display = "block";
+    }
+}
+
+
+
+var lists = document.querySelectorAll('.parent .lists .containers');
+var index = 0; 
+    function left() {
+        
+        if (index > 0) 
+        { 
+            index--; 
+            lists[index].scrollIntoView({behavior:"smooth"});
+        }
+    } 
+    function right() {
+        if (index < lists.length - 1)
+
+        {   
+            index++; 
+            lists[index].scrollIntoView({behavior:"smooth", block:"nearest", inline:"start"}); 
+        }
+    }
+
+    window.addEventListener('scroll', function() {
+    var element = document.getElementById('slideInDiv');
+    var position = element.getBoundingClientRect();
+
+    // Checking if the element is in the viewport
+    if (position.top < window.innerHeight && position.bottom >= 0) {
+        element.classList.add('visible');
+    }
+});
+
+
+
+
+
+
+
+</script>
+
+
+
+    
+</body>
+</html>
